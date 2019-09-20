@@ -3,6 +3,8 @@ let playerArea = document.querySelector(".playerArea");
 let playerOneDisplay = document.querySelector("#keyName");
 let playerTwoDisplay = document.querySelector("#muuzeName");
 let replayButton = document.querySelector("#replay");
+let playerOneScoreDisplay = document.querySelector("#keyScore");
+let playerTwoScoreDisplay = document.querySelector("#muuzeScore")
 const startingX = 70;
 const startingY = 50;
 let cubyPosX = startingX;
@@ -18,6 +20,8 @@ start();
 
 function start() {
     cuby.style.backgroundColor = "blue";
+    playerOneScoreDisplay.innerText = playerOneScore;
+    playerTwoScoreDisplay.innerText = playerTwoScore;
     time = setTimeout(gameOver, 3000);
     document.addEventListener("keydown", moveCube); // Passes the event without even calling it
     cuby.addEventListener("click", touched);
@@ -81,8 +85,8 @@ function gameOver() {
 function promptName() {
     playerOne = prompt("Give the name of Keyboard Player");
     playerTwo = prompt("Give the name of Mouse Player");
-    playerOneDisplay.innerText = playerOne;
-    playerTwoDisplay.innerText = playerTwo;
+    playerOneDisplay.innerText = playerOne + ": ";
+    playerTwoDisplay.innerText = playerTwo + ": ";
 }
 
 function checkPlayerScore() {
