@@ -41,3 +41,10 @@ function moveCube(e) {
     cuby.style.left = pozY;
     console.log(pozX, pozY);
 }
+
+cuby.addEventListener("click", function(e){
+    cuby.style.backgroundColor = "red";
+    moveEvent.removeEventListener("keydown", moveCube,true);
+    
+
+})
