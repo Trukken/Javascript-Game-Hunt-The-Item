@@ -2,19 +2,26 @@ let cuby = document.querySelector(".playerKeyBoard");
 let playerArea = document.querySelector(".playerArea");
 let playerOneDisplay = document.querySelector("#keyName");
 let playerTwoDisplay = document.querySelector("#muuzeName");
-let cubyPosX = 70;
-let cubyPosY = 50;
+let replayButton = document.querySelector("#replay");
+const startingX = 70;
+const startingY = 50;
+let cubyPosX = startingX;
+let cubyPosY = startingY;
 let playerOne;
 let playerTwo;
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let time;
 
-checkPlayerScore();
 promptName();
+start();
 
-let time = setTimeout(gameOver, 3000);
-document.addEventListener("keydown", moveCube); // Passes the event without even calling it
-
+function start() {
+    cuby.style.backgroundColor = "blue";
+    time = setTimeout(gameOver, 3000);
+    document.addEventListener("keydown", moveCube); // Passes the event without even calling it
+    cuby.addEventListener("click", touched);
+}
 function moveCube(e) {
     console.log(cubyPosX, cubyPosY);
     console.log(e);
@@ -51,7 +58,6 @@ function moveCube(e) {
     console.log(pozX, pozY);
 }
 
-cuby.addEventListener("click", touched);
 
 function touched() {
     cuby.style.backgroundColor = "red";
@@ -60,6 +66,7 @@ function touched() {
     alert(playerTwo + " Muuuse player won!!!");
     clearTimeout(time);
     playerTwoScore++;
+    checkPlayerScore();
 }
 
 function gameOver() {
@@ -68,6 +75,7 @@ function gameOver() {
     cuby.removeEventListener("click", touched);
     alert(playerOne + " Keyboard player won!!!");
     playerOneScore++;
+    checkPlayerScore();
 }
 
 function promptName() {
@@ -78,9 +86,21 @@ function promptName() {
 }
 
 function checkPlayerScore() {
-    if (playerOneScore >= 5) {
+    if (playerOneScore >= 3) {
         alert(playerOne + " won the game");
-    } else if (playerTwoScore >= 5) {
+    } else if (playerTwoScore >= 3) {
         alert(playerTwo + " won the game");
+    } else {
+        replayButton.style.display = "block";
+        replayButton.addEventListener("click", replayClicked);
     }
+}
+
+function replayClicked() {
+    replayButton.style.display = "none";
+    cuby.style.top = startingX + "%";
+    cuby.style.left = startingY + "%";
+    cubyPosX = startingX;
+    cubyPosY = startingY;
+    start();
 }
