@@ -1,16 +1,25 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
   margin: 0;
   padding: 0;
 }
 
+.playerArea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60%;
+  width: 70%;
+  border: 1px red solid;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .playerKeyBoard {
   background-color: red;
-  height: 200px;
-  width: 200px;
+  height: 10%;
+  width: 10%;
   position: absolute;
   top: 70%;
   left: 50%;
