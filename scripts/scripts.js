@@ -3,10 +3,10 @@ let cubyPosX = 0;
 let cubyPosY = 0;
 document.addEventListener("keyup", function (e) {
     console.log(e);
-    move(e);
+    moveCube(e);
 });
 
-function move(e) {
+function moveCube(e) {
     console.log(cubyPosX, cubyPosY);
     switch (e.keyCode) {
         case 40:
