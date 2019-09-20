@@ -25,7 +25,6 @@ const timerTimeout = 30000;
 
 promptName();
 start();
-
 function start() {
     cuby.style.backgroundColor = "blue";
     playerOneScoreDisplay.innerText = playerOneScore;
