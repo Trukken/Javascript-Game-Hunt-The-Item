@@ -90,6 +90,8 @@ function promptName() {
 }
 
 function checkPlayerScore() {
+    playerOneScoreDisplay.innerText = playerOneScore;
+    playerTwoScoreDisplay.innerText = playerTwoScore;
     if (playerOneScore >= 3) {
         alert(playerOne + " won the game");
     } else if (playerTwoScore >= 3) {
