@@ -5,14 +5,15 @@
     padding: 0;
 }
 
-.cuby {
+.playerKeyBoard {
     background-color: red;
     height: 200px;
     width: 200px;
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 70%;
+    left: 50%;
     border-radius: 5px;
     font-size: 7rem;
     text-align: center;
+    transform: translate(-50%,-50%)
   }

@@ -1,6 +1,6 @@
 let cuby = document.querySelector(".playerKeyBoard");
-let cubyPosX = 0;
-let cubyPosY = 0;
+let cubyPosX = 70;
+let cubyPosY = 50;
 document.addEventListener("keydown", function (e) {
     console.log(e);
     moveCube(e);
