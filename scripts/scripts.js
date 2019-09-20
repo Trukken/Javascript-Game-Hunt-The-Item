@@ -15,7 +15,6 @@ let playerOneScore = 0;
 let playerTwoScore = 0;
 let time;
 
-
 promptName();
 start();
 
