@@ -56,9 +56,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 2px black solid;
+  margin: 20px 120px;
+  border-radius: 20px;
 }
 
 .header div {
   padding: 10px 0px;
+}
+
+body {
+  background-color: beige;
 }
 /*# sourceMappingURL=style.css.map */
