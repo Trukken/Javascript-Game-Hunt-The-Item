@@ -22,7 +22,7 @@ function start() {
     cuby.style.backgroundColor = "blue";
     playerOneScoreDisplay.innerText = playerOneScore;
     playerTwoScoreDisplay.innerText = playerTwoScore;
-    time = setTimeout(gameOver, 3000);
+    time = setTimeout(gameOver, 30000);
     document.addEventListener("keydown", moveCube); // Passes the event without even calling it
     cuby.addEventListener("click", touched);
 }
