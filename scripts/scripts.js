@@ -4,7 +4,12 @@ let playerOneDisplay = document.querySelector("#keyName");
 let playerTwoDisplay = document.querySelector("#muuzeName");
 let cubyPosX = 70;
 let cubyPosY = 50;
+let playerOne;
+let playerTwo;
+let playerOneScore = 0;
+let playerTwoScore = 0;
 
+checkPlayerScore();
 promptName();
 
 let time = setTimeout(gameOver, 3000);
@@ -12,6 +17,7 @@ document.addEventListener("keydown", moveCube); // Passes the event without even
 
 function moveCube(e) {
     console.log(cubyPosX, cubyPosY);
+    console.log(e);
     switch (e.keyCode) {
         case 40:
             cubyPosX += 1;
@@ -51,21 +57,30 @@ function touched() {
     cuby.style.backgroundColor = "red";
     document.removeEventListener("keydown", moveCube);
     cuby.removeEventListener("click", touched);
-    alert("Muuuse player won!!!");
+    alert(playerTwo + " Muuuse player won!!!");
     clearTimeout(time);
+    playerTwoScore++;
 }
 
 function gameOver() {
     cuby.style.backgroundColor = "green";
     document.removeEventListener("keydown", moveCube);
     cuby.removeEventListener("click", touched);
-    alert("Keyboard player won!!!");
+    alert(playerOne + " Keyboard player won!!!");
+    playerOneScore++;
 }
 
 function promptName() {
-    let playerOne = prompt("Give the name of Keyboard Player");
-    let playerTwo = prompt("Give the name of Mouse Player");
+    playerOne = prompt("Give the name of Keyboard Player");
+    playerTwo = prompt("Give the name of Mouse Player");
     playerOneDisplay.innerText = playerOne;
     playerTwoDisplay.innerText = playerTwo;
 }
 
+function checkPlayerScore() {
+    if (playerOneScore >= 5) {
+        alert(playerOne + " won the game");
+    } else if (playerTwoScore >= 5) {
+        alert(playerTwo + " won the game");
+    }
+}
