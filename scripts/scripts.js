@@ -1,8 +1,8 @@
-let playerKeyBoard= document.querySelector(".cuby");
+let playerKeyBoard = document.querySelector(".cuby");
 let playerArea = document.querySelector(".playerArea");
 let cubyPosX = 70;
 let cubyPosY = 50;
-document.addEventListener("keydown", function (e) {
+let moveEvent = document.addEventListener("keydown", function (e) {
     console.log(e);
     moveCube(e);
 });
