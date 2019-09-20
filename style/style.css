@@ -17,17 +17,19 @@
   background-image: url("https://images.pexels.com/photos/734973/pexels-photo-734973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
-.playerKeyBoard img {
-  height: 10%;
-  width: 10%;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  border-radius: 5px;
-  font-size: 7rem;
-  text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.playerKeyBoard {
+    background-image: url("https://images-na.ssl-images-amazon.com/images/I/8166xCVDGnL._SY355_.jpg");
+    background-size: contain;
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    border-radius: 5px;
+    font-size: 7rem;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 #replay {
