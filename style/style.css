@@ -18,18 +18,18 @@
 }
 
 .playerKeyBoard {
-    background: url('../imgs/580b57fbd9996e24bc43bbe5.png') no-repeat center;
-    background-size: contain;
-    height: 10%;
-    width: 10%;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    border-radius: 5px;
-    font-size: 7rem;
-    text-align: center;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  background: url("../imgs/580b57fbd9996e24bc43bbe5.png") no-repeat center;
+  background-size: contain;
+  height: 10%;
+  width: 10%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  border-radius: 5px;
+  font-size: 7rem;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 #replay {
