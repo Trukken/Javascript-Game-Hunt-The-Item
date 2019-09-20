@@ -1,4 +1,4 @@
-let cuby = document.querySelector(".playerKeyBoard");
+let playerKeyBoard= document.querySelector(".cuby");
 let playerArea = document.querySelector(".playerArea");
 let cubyPosX = 70;
 let cubyPosY = 50;
@@ -37,7 +37,7 @@ function moveCube(e) {
 
     let pozX = cubyPosX + "%";
     let pozY = cubyPosY + "%";
-    cuby.style.top = pozX;
-    cuby.style.left = pozY;
+    playerKeyBoard.style.top = pozX;
+    playerKeyBoard.style.left = pozY;
     console.log(pozX, pozY);
 }
