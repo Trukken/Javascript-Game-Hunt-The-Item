@@ -1,7 +1,12 @@
 let cuby = document.querySelector(".playerKeyBoard");
 let playerArea = document.querySelector(".playerArea");
+let playerOneDisplay = document.querySelector("#keyName");
+let playerTwoDisplay = document.querySelector("#muuzeName");
 let cubyPosX = 70;
 let cubyPosY = 50;
+
+promptName();
+
 let time = setTimeout(gameOver, 3000);
 document.addEventListener("keydown", moveCube); // Passes the event without even calling it
 
@@ -57,8 +62,10 @@ function gameOver() {
     alert("Keyboard player won!!!");
 }
 
-function promptName(){
+function promptName() {
     let playerOne = prompt("Give the name of Keyboard Player");
     let playerTwo = prompt("Give the name of Mouse Player");
+    playerOneDisplay.innerText = playerOne;
+    playerTwoDisplay.innerText = playerTwo;
 }
 
