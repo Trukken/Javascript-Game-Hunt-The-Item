@@ -12,6 +12,8 @@
     border: 1px white solid;
     transform: translate(-50%, -50%);
     background-image: url("https://images.pexels.com/photos/734973/pexels-photo-734973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    cursor: url(../imgs/gun-pointer.png), pointer;
+    
 }
 .playerKeyBoard{
     background: url('../imgs/580b57fbd9996e24bc43bbe5.png') no-repeat center;
@@ -29,12 +31,17 @@
 
   #replay{
       display: none;
+      color: blue;
+      border-color: blue;
+      padding: 5px;
+      border-radius: 15px;
   }
   .score{
       display: flex;
   }
 
   .header{
+    color: blue;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
