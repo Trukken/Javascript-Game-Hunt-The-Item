@@ -2,10 +2,8 @@ let cuby = document.querySelector(".playerKeyBoard");
 let playerArea = document.querySelector(".playerArea");
 let cubyPosX = 70;
 let cubyPosY = 50;
-let moveEvent = document.addEventListener("keydown", function (e) {
-    console.log(e);
-    moveCube(e);
-});
+
+document.addEventListener("keydown", moveCube); // Passes the event without even calling it
 
 function moveCube(e) {
     console.log(cubyPosX, cubyPosY);
@@ -42,9 +40,10 @@ function moveCube(e) {
     console.log(pozX, pozY);
 }
 
-cuby.addEventListener("click", function(e){
-    cuby.style.backgroundColor = "red";
-    moveEvent.removeEventListener("keydown", moveCube,true);
-    
+cuby.addEventListener("click", touched);
 
-})
+function touched() {
+    cuby.style.backgroundColor = "red";
+    document.removeEventListener("keydown", moveCube);
+    cuby.removeEventListener("click", touched);
+}
