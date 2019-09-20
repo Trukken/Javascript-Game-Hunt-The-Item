@@ -14,6 +14,14 @@ let playerTwo;
 let playerOneScore = 0;
 let playerTwoScore = 0;
 let time;
+const numberOfGames = 5;
+let info = 0;
+let cubySpeed = 1;
+let cubySize = 2;
+const winStreakControl = 2;
+const cubyHeight = 10;
+const cubyWidth = 10;
+const timerTimeout = 30000;
 
 promptName();
 start();
@@ -22,7 +30,7 @@ function start() {
     cuby.style.backgroundColor = "blue";
     playerOneScoreDisplay.innerText = playerOneScore;
     playerTwoScoreDisplay.innerText = playerTwoScore;
-    time = setTimeout(gameOver, 30000);
+    time = setTimeout(gameOver, timerTimeout);
     document.addEventListener("keydown", moveCube); // Passes the event without even calling it
     cuby.addEventListener("click", touched);
 }
@@ -31,16 +39,16 @@ function moveCube(e) {
     console.log(e);
     switch (e.keyCode) {
         case 40:
-            cubyPosX += 1;
+            cubyPosX += cubySpeed;
             break;
         case 37:
-            cubyPosY += -1;
+            cubyPosY += -cubySpeed;
             break;
         case 38:
-            cubyPosX += -1;
+            cubyPosX += -cubySpeed;
             break;
         case 39:
-            cubyPosY += 1;
+            cubyPosY += cubySpeed;
             break;
     }
 
@@ -70,6 +78,7 @@ function touched() {
     alert(playerTwo + " Muuuse player won!!!");
     clearTimeout(time);
     playerTwoScore++;
+    info++;
     checkPlayerScore();
 }
 
@@ -79,6 +88,9 @@ function gameOver() {
     cuby.removeEventListener("click", touched);
     alert(playerOne + " Keyboard player won!!!");
     playerOneScore++;
+    if (info >= 0) {
+        info--;
+    }
     checkPlayerScore();
 }
 
@@ -92,13 +104,27 @@ function promptName() {
 function checkPlayerScore() {
     playerOneScoreDisplay.innerText = playerOneScore;
     playerTwoScoreDisplay.innerText = playerTwoScore;
-    if (playerOneScore >= 3) {
+    if (playerOneScore >= numberOfGames) {
         alert(playerOne + " won the game");
-    } else if (playerTwoScore >= 3) {
+    } else if (playerTwoScore >= numberOfGames) {
         alert(playerTwo + " won the game");
     } else {
         replayButton.style.display = "block";
         replayButton.addEventListener("click", replayClicked);
+    }
+    if (info >= winStreakControl) {
+        cubySpeed = 3;
+        cuby.style.height = (cubyHeight / cubySize) + "%";
+        cuby.style.width = (cubyWidth / cubySize) + "%";
+
+    } else if (info < winStreakControl && info > 0) {
+        cubySpeed = 2;
+        cuby.style.height = cubyHeight + "%";
+        cuby.style.width = cubyWidth + "%";
+    } else if (info == 0) {
+        cubySpeed = 1;
+        cuby.style.height = cubyHeight + "%";
+        cuby.style.width = cubyWidth + "%";
     }
 }
 
