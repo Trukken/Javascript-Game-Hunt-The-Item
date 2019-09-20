@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+.cuby {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-radius: 5px;
+  font-size: 7rem;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
