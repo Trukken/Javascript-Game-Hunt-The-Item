@@ -1,4 +1,4 @@
-let cuby = document.querySelector(".cuby");
+let cuby = document.querySelector(".playerKeyBoard");
 let cubyPosX = 0;
 let cubyPosY = 0;
 document.addEventListener("keyup", function (e) {
