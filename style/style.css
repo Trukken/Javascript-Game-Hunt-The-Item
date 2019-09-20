@@ -14,6 +14,7 @@
   border: 1px red solid;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  background-image: url("https://images.pexels.com/photos/734973/pexels-photo-734973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
 .playerKeyBoard {
