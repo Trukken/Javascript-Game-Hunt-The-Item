@@ -2,7 +2,7 @@ let cuby = document.querySelector(".playerKeyBoard");
 let playerArea = document.querySelector(".playerArea");
 let cubyPosX = 70;
 let cubyPosY = 50;
-
+let time = setTimeout(gameOver, 3000);
 document.addEventListener("keydown", moveCube); // Passes the event without even calling it
 
 function moveCube(e) {
@@ -46,4 +46,13 @@ function touched() {
     cuby.style.backgroundColor = "red";
     document.removeEventListener("keydown", moveCube);
     cuby.removeEventListener("click", touched);
+    alert("Muuuse player won!!!");
+    clearTimeout(time);
+}
+
+function gameOver() {
+    cuby.style.backgroundColor = "green";
+    document.removeEventListener("keydown", moveCube);
+    cuby.removeEventListener("click", touched);
+    alert("Keyboard player won!!!");
 }
