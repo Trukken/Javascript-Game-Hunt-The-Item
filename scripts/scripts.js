@@ -56,3 +56,9 @@ function gameOver() {
     cuby.removeEventListener("click", touched);
     alert("Keyboard player won!!!");
 }
+
+function promptName(){
+    let playerOne = prompt("Give the name of Keyboard Player");
+    let playerTwo = prompt("Give the name of Mouse Player");
+}
+
