@@ -176,7 +176,7 @@ function checkPlayerScore () {
     replayButton.addEventListener('click', replayClicked)
   }
   if (info >= winStreakControl) {
-    power = 0.05
+    power = 0.04
     cuby.style.height = (cubyHeight / cubySize) + '%'
     cuby.style.width = (cubyWidth / cubySize) + '%'
   } else if (info < winStreakControl && info > 0) {
