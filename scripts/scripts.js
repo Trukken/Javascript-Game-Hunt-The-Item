@@ -45,6 +45,7 @@ function start () {
   cuby.style.backgroundColor = 'blue'
   playerOneScoreDisplay.innerText = playerOneScore
   playerTwoScoreDisplay.innerText = playerTwoScore
+  time = setTimeout(gameOver, timerTimeout)
   document.addEventListener('keydown', moveCube) // Passes the event without even calling it
   cuby.addEventListener('click', touched)
 }
@@ -84,7 +85,6 @@ setInterval(function () {
 }, 1000 / 60)
 
 function moveCube (e) {
-  time = setTimeout(gameOver, timerTimeout)
   console.log(e)
   switch (e.keyCode) {
     case 40:
