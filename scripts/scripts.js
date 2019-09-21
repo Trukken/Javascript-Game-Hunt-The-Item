@@ -5,8 +5,8 @@ let playerTwoDisplay = document.querySelector('#muuzeName')
 let replayButton = document.querySelector('#replay')
 let playerOneScoreDisplay = document.querySelector('#keyScore')
 let playerTwoScoreDisplay = document.querySelector('#muuzeScore')
-const startingX = 70
-const startingY = 50
+const startingX = 50
+const startingY = 80
 let cubyPosX = startingX
 let cubyPosY = startingY
 let playerOne
@@ -17,10 +17,10 @@ let time
 const numberOfGames = 5
 let info = 0
 let cubySpeed = 1
-let cubySize = 2
+let cubySize = 1.5
 const winStreakControl = 2
 const cubyHeight = 10
-const cubyWidth = 10
+const cubyWidth = 8
 const timerTimeout = 30000
 
 let flagUp = false
