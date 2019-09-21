@@ -49,6 +49,8 @@ function start () {
   document.addEventListener('keydown', moveCube) // Passes the event without even calling it
   cuby.addEventListener('click', touched)
 }
+
+//! Credit goes to Igor Marty https://codepen.io/IMarty/
 setInterval(function () {
   if (flagUp)
     accY = accY - power
@@ -62,7 +64,6 @@ setInterval(function () {
   accY = accY * 0.95
   accX = accX * 0.95
 
-  // changement de la vitesse
   vitY = (vitY + accY) * friction
   vitX = (vitX + accX) * friction
 
