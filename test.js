@@ -1,4 +1,4 @@
-var posX = Math.random()*500;
+/*var posX = Math.random()*500;
 var posY = Math.random()*500;
 var vitX = 0;
 var vitY = 0;
@@ -269,4 +269,4 @@ function replayClicked() {
     cubyPosX = startingX;
     cubyPosY = startingY;
     start();
-}
+}*/
