@@ -1,7 +1,9 @@
 ## Hello
-This is a simple duck-hunt like game with increasing difficulty
-Ammo, CPU / Solo play yet to be implemented.
-Netlify link : https://hunt-the-item.netlify.com/
+This is a simple duck-hunt like game with increasing difficulty CPU / Solo play yet to be implemented.
+
+### The following features were added:</h2>
+- Added ammo count, so Crosshair player can not spam their click infinitely.
+- Slowed down the duck just a tad bit.
 
 Main contributors:
 Ji Young de Madre https://www.linkedin.com/in/ji-young-de-madre-b6aa6296/

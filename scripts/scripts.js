@@ -5,6 +5,7 @@ let playerTwoDisplay = document.querySelector('#muuzeName')
 let replayButton = document.querySelector('#replay')
 let playerOneScoreDisplay = document.querySelector('#keyScore')
 let playerTwoScoreDisplay = document.querySelector('#muuzeScore')
+let ammoCounter = document.querySelector('#ammo')
 const startingX = 50
 const startingY = 80
 let cubyPosX = startingX
@@ -37,7 +38,9 @@ var vitX = 0
 var vitY = 0
 
 let power = 0.02
-let friction = 0.80
+let friction = 0.90
+let defaultAmmoCount = 25
+let ammo = defaultAmmoCount
 
 promptName()
 start()
@@ -45,9 +48,11 @@ function start () {
   cuby.style.backgroundColor = 'blue'
   playerOneScoreDisplay.innerText = playerOneScore
   playerTwoScoreDisplay.innerText = playerTwoScore
-  time = setTimeout(gameOver, timerTimeout)
+  ammoCounter.innerText = "Ammo:" + ammo
+  time = setTimeout(timeUp, timerTimeout)
   document.addEventListener('keydown', moveCube) // Passes the event without even calling it
   cuby.addEventListener('click', touched)
+  playerArea.addEventListener('click', shoot)
 }
 
 //! Credit goes to Igor Marty https://codepen.io/IMarty/
@@ -88,16 +93,16 @@ setInterval(function () {
 function moveCube (e) {
   console.log(e)
   switch (e.keyCode) {
-    case 40:
+    case 83:
       flagDown = true
       break
-    case 38:
+    case 87:
       flagUp = true
       break
-    case 39:
+    case 68:
       flagRight = true
       break
-    case 37:
+    case 65:
       flagLeft = true
       break
   }
@@ -112,29 +117,24 @@ document.addEventListener('keyup', stopCube)
 
 function stopCube (e) {
   switch (e.keyCode) {
-    case 40:
+    case 83:
       flagDown = false
       break
-    case 38:
+    case 87:
       flagUp = false
       break
-    case 39:
+    case 68:
       flagRight = false
       break
-    case 37:
+    case 65:
       flagLeft = false
       break
   }
 }
 
 function touched () {
-  flagDown = false
-  flagUp = false
-  flagRight = false
-  flagLeft = false
+  unsetFalgs()
   cuby.style.backgroundColor = 'red'
-  document.removeEventListener('keydown', moveCube)
-  cuby.removeEventListener('click', touched)
   alert(playerTwo + ' Muuuse player won!!!')
   clearTimeout(time)
   playerTwoScore++
@@ -142,14 +142,9 @@ function touched () {
   checkPlayerScore()
 }
 
-function gameOver () {
-  flagDown = false
-  flagUp = false
-  flagRight = false
-  flagLeft = false
+function timeUp () {
+  unsetFalgs()
   cuby.style.backgroundColor = 'green'
-  document.removeEventListener('keydown', moveCube)
-  cuby.removeEventListener('click', touched)
   alert(playerOne + ' Keyboard player won!!!')
   playerOneScore++
   if (info >= 0) {
@@ -197,5 +192,32 @@ function replayClicked () {
   cuby.style.left = startingY + '%'
   posX = startingX
   posY = startingY
+  ammo = defaultAmmoCount
   start()
+}
+
+function shoot() {
+  if(--ammo < 1) {
+    unsetFalgs()
+    cuby.style.backgroundColor = 'green'
+    document.removeEventListener('keydown', moveCube)
+    cuby.removeEventListener('click', touched)
+    alert(playerOne + ' Keyboard player won!!!')
+    playerOneScore++
+    if (info >= 0) {
+      info--
+    }
+    checkPlayerScore()
+  }
+  ammoCounter.innerText = "Ammo:" + ammo
+}
+
+function unsetFalgs() {
+  flagDown = false
+  flagUp = false
+  flagRight = false
+  flagLeft = false
+  document.removeEventListener('keydown', moveCube)
+  cuby.removeEventListener('click', touched)
+  playerArea.removeEventListener('click', shoot)
 }

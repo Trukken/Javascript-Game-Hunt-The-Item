@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Turret Road", cursive;
+}
+
+p {
+  font-size: 18px;
+}
+
+b {
+  font-size: 20px;
+}
+
+body {
+  background-color: beige;
+}
+
+* {
+  text-align: center;
+}
+
+div {
+  padding: 20px;
+}
+
+.explain {
+  margin: 1% 20%;
+}
+
+/*# sourceMappingURL=index_style.css.map */

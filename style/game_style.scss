@@ -1,9 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Turret Road', cursive;
-}
+@import 'font';
 .playerArea{
     position: absolute;
     top: 60%;
@@ -53,7 +48,4 @@
     div{
         padding: 10px 0px;
     }
-}
-body{
-    background-color: beige;
 }
